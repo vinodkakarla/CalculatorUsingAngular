@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html data-ng-app="calculator">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>    <!-- Vendor Libs: jQuery only used for Bootstrap functionality -->
+
+	<link rel="stylesheet" href="WebContent/stylesheets/style.css">
+
+    <script src="WebContent/Scripts/angular.js"></script>
+    <script src="WebContent/Scripts/angular-route.js"></script>
+    <script src="WebContent/Scripts/jquery.min.js"></script>
+
+    <!-- UI Libs -->
+    <script src="WebContent/Scripts/bootstrap.js"></script>
+    
+     <!-- App libs -->
+    <script src="WebContent/app/app.js"></script>
+    <script src="WebContent/app/controllers/controllers.js"></script>
+    <script src="WebContent/app/services/buttonFactory.js"></script>
+</head>
+<body data-ng-controller="CalculatorController">
+
+	
+	<div style="width:464px;text-align: center;padding-left:20%;" class="block-grid four-up">
+			<input type="text" data-ng-model="infixNotation" placeholder="Use the buttons below...." style="width:264px;height: 20px"><br>
+			<button data-ng-repeat="button in buttons" data-ng-click="buttonEvent(button)">
+				{{button.buttonName}}
+			</button>
+	</div>
+
+</body>
+</html>
